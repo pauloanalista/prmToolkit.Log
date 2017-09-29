@@ -72,6 +72,17 @@ Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (WebConfig
 </configuration>
 
 ```
+### Estrutura da tabela no banco de dados
+```sh
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Application` varchar(100) DEFAULT NULL,
+  `MessageType` varchar(50) DEFAULT NULL,
+  `Message` varchar(255) DEFAULT NULL,
+  `CurrentDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+```
 
 ### Exemplo de como usar
 
