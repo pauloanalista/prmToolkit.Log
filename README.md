@@ -73,6 +73,8 @@ Após adicionar o pacote prmToolkit.Log em seu projeto, configure seu (WebConfig
 
 ```
 ### Estrutura da tabela no banco de dados
+
+#### MYSQL
 ```sh
 CREATE TABLE `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -82,6 +84,21 @@ CREATE TABLE `log` (
   `CurrentDate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+```
+
+### SQL SERVER
+```sh
+CREATE TABLE [dbo].[Log](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Application] [varchar](100) NULL,
+	[MessageType] [varchar](50) NULL,
+	[Message] [varchar](255) NULL,
+	[CurrentDate] [datetime] NULL,
+ CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 ```
 
 ### Exemplo de como usar
